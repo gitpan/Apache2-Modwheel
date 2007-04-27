@@ -1,0 +1,32 @@
+AUTHORS
+BUILD-ubuntu.sh
+Build.PL
+Changes
+config/modwheel-apache-example.conf
+devel/OLD.pm
+inc/ExtUtils/AutoInstall.pm
+inc/Module/AutoInstall.pm
+inc/Module/Build/Modwheel.pm
+inc/Module/Install.pm
+inc/Module/Install/AutoInstall.pm
+inc/Module/Install/Base.pm
+inc/Module/Install/Can.pm
+inc/Module/Install/Fetch.pm
+inc/Module/Install/Include.pm
+inc/Module/Install/Makefile.pm
+inc/Module/Install/Metadata.pm
+inc/Module/Install/Win32.pm
+inc/Module/Install/WriteAll.pm
+INSTALL
+lib/Apache2/Modwheel.pm
+lib/Apache2/Modwheel/Authen.pm
+LICENSE
+Makefile.PL
+MANIFEST			This list of files
+MANIFEST.skip
+META.yml
+README
+t/01-Apache-ModWheel.t
+t/02-Apache-ModWheel-Authen.t
+ToDo
+SIGNATURE    Added here by Module::Build

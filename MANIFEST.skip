@@ -1,0 +1,16 @@
+_build
+blib
+\..*swp$
+\.gdb_history$
+a\.out$
+test\.c$
+test\.pl$
+\.svn/
+install\.cache$
+CVS
+.*\.tmp$
+t/cache
+\.DS_Store$
+\.swo
+Build$
+Makefile$

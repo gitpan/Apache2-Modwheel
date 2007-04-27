@@ -1,0 +1,99 @@
+
+               M O D W H E E L for A P A C H E 2
+
+INSTALLING THE Modwheel-Apache2 BINDINGS
+
+Installation of the modules is easy:
+
+    perl Makefile.PL
+    make
+    make install
+
+After this you have to configure your apache server.
+The Modwheel install script should have created an example
+httpd.conf example to your Modwheel installation dir.
+The file is named config/Modwheel-apache-example.conf and can also
+be found in the config directory of this distribution.
+Study this file and change it to fit your configuration, then add it to your
+httpd.conf. Here is a list of what the new Apache configuration directives
+means:
+
+
+HANDLERS
+
+PerlResponseHandler Apache2::Modwheel
+
+    This is the main Modwheel handler. It requires that you have
+    the ModwheelPrefix and ModwheelConfigFile options set.
+
+PerlAuthenHandler Apache2::Modwheel::Authen
+
+    This module is for authentication via the modwheel user system.
+
+
+OPTIONS
+
+PerlSetVar ModwheelPrefix
+    This is the directory you installed Modwheel to.
+
+    Example: PerlSetVar ModwheelPrefix "/opt/Modwheel"
+
+PerlSetVar ModwheelConfigFile
+    This is the Modwheel configuration file to use.
+    If the filename is relative Modwheel will search for it in
+    the ModwheelPrefix directory.
+
+    Example: PerlSetVar ModwheelConfigFile "config/Modwheelconfig.yml"
+
+PerlSetVar ModwheelSite
+    The site to use. Sites are configured in the configuration file.
+
+    Example: PerlSetVar ModwheelSite "SimpleAdmin"
+
+PerlSetVar ModwheelFileUploads
+    Users will be able to upload files to the site if this is set to Yes.
+    This is used for the Repositories.
+
+    Example: PerlSetVar ModwheelFileUploads Yes
+
+PerlSetVar ModwheelWebPathToId Yes
+    If this is set to yes, a user can enter i.e
+        http://foo.bar/Music/Aphex Twin
+    in his browser and Modwheel will find the node in the object tree
+    with this name.
+
+PerlSetVar Locale
+    What language the site is in. For a list of the values that are possible
+    with this directive you can enter this command: (if you are running a form
+    of Unix):
+        locale -a
+
+    Example: PerlSetVar Locale en_EN
+
+PerlSetVar DontHandle
+
+    URL's that Modwheel should'nt handle for this site. This is meant for
+    static content that does not need any content. i.e /images, /javascript
+    and so on.
+
+    Example: PerlSetVar DontHandle "rep javascript css images scriptaculous"
+
+PerlSetVar NoDatabaseConnect
+
+    Modwheel will not connect to the database if this is set to 'Yes'.
+
+    Example: PerlSetVar NoDatabaseConnect Yes
+
+PerlSetVar ContentType
+    Set the content type for this site.
+
+    Example: PerlSetVar ContentType "text/html"
+
+PerlSetVar ModwheelFollowTemplates
+    If a object has a user-specified template defined and ModwheelFollowTemplates
+    is set to 'Yes', it will choose this template instead of the default.
+
+    Example: PerlSetVar ModwheelFollowTemplates Yes
+
+
+(c) 2007 Ask Solem Hoel <ask@0x61736b.net>    
