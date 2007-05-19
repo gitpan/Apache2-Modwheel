@@ -12,7 +12,7 @@ use warnings;
 use 5.00800;
 use mod_perl2 2.0;
 use Class::InsideOut::Policy::Modwheel qw( :std );
-use version; our $VERSION = qv('0.2.1');
+use version; our $VERSION = qv('0.2.3');
 {
 
     use Readonly;
@@ -123,7 +123,6 @@ use version; our $VERSION = qv('0.2.1');
                 $page = $o->template;
             }
         }
-        $page   ||= $modwheel->siteconfig->{directoryindex};
 
         # remove leading slash.
         $page =~ s{^/}{}xms;
@@ -205,6 +204,7 @@ use version; our $VERSION = qv('0.2.1');
         $db_for{ident $self}         = $db;
         $user_for{ident $self}       = $user;
         $repository_for{ident $self} = $repository;
+        $object_for{ident $self}     = $object;
         $template_for{ident $self}   = $template;
 
         return;
@@ -249,6 +249,7 @@ use version; our $VERSION = qv('0.2.1');
         my ($self) = @_;
         my $r      = $self->apache;
         my $req    = $self->apreq;
+        my $modwheel = $self->modwheel;
         my $db     = $self->db;
         my $object = $self->object;
         my $parent = $req->param('parent');
@@ -273,6 +274,7 @@ use version; our $VERSION = qv('0.2.1');
                 undef $page;
             }
         }
+        $page   ||= $modwheel->siteconfig->{directoryindex};
         $parent ||= Modwheel::Object::MW_TREE_ROOT;
 
         return ($parent, $page);

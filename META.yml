@@ -1,20 +1,20 @@
 ---
 name: Apache2-Modwheel
-version: 0.2.1
+version: 0.2.3
 author:
   - 'Ask Solem <ASKSH@cpan.org>'
 abstract: Use Modwheel with mod_perl2
 license: perl
 resources:
-  cpan: http://search.cpan.org/~asksh/Apache2-Modwheel-0.02/
-  homepage: http://www.0x61736b.net/Modwheel
+  Download: http://search.cpan.org/~asksh/Apache2-Modwheel-0.2.3/
+  HomePage: http://www.0x61736b.net/Modwheel
   license: http://dev.perl.org/licenses/
 requires:
   Apache2::Request: 2
   Apache2::Upload: 2
   Carp: 0
   ExtUtils::XSBuilder::ParseSource: 0.03
-  Modwheel: v0.0.2
+  Modwheel: 0.2.3
   Parse::RecDescent: 1.94
   Readonly: 1
   Scalar::Util: 0
@@ -27,17 +27,20 @@ build_requires:
 recommends:
   Pod::Coverage: 0
   Readonly::XS: 1
+  Test::Kwalitee: 0.3
   Test::Pod: 0
   Test::Pod::Coverage: 0
+  Test::YAML::Meta: 0.004
 dynamic_config: 0
 provides:
   Apache2::Modwheel:
     file: lib/Apache2/Modwheel.pm
-    version: 0.2.1
+    version: 0.2.3
   Apache2::Modwheel::Authen:
     file: lib/Apache2/Modwheel/Authen.pm
-    version: 0.2.1
-generated_by: Module::Build version 0.2807
+    version: 0.2.3
+generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2
+distribution_type: Application

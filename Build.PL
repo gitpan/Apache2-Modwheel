@@ -14,10 +14,10 @@ my $builder = Module::Build->new(
     dist_author          => 'Ask Solem <ASKSH@cpan.org>',
     dist_version_from    => 'lib/Apache2/Modwheel.pm',
     dynamic_config       => NO,
-    sign                 => YES,
+    sign                 => NO,
     recursive_test_files => YES,
     requires             => {
-        'Modwheel'              => 'v0.0.2',
+        'Modwheel'              => '0.2.3',
         'mod_perl2'             => 2.00,
         'Tie::IxHash'           => 1.21,
         'Parse::RecDescent'     => 1.94,
@@ -35,6 +35,8 @@ my $builder = Module::Build->new(
         'Pod::Coverage'         => 0,
         'Test::Pod::Coverage'   => 0,
         'Readonly::XS'          => 1.00,
+        'Test::Kwalitee'        => 0.30,
+        'Test::YAML::Meta'      => 0.004,
     },
     build_requires       => {
         'Test::More'            => 0.42,
@@ -52,9 +54,10 @@ my $builder = Module::Build->new(
     ) ],
     meta_merge          => {
         resources           => {
-            homepage            => 'http://www.0x61736b.net/Modwheel',
-            cpan                => 'http://search.cpan.org/~asksh/Apache2-Modwheel-0.02/',
+            HomePage            => 'http://www.0x61736b.net/Modwheel',
+            Download            => 'http://search.cpan.org/~asksh/Apache2-Modwheel-0.2.3/',
         },
+        distribution_type   => 'Application',
     },
     
 );

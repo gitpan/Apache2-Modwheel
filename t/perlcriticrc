@@ -1,0 +1,8 @@
+#theme     = (pbp + security) * bugs 
+
+severity  = brutal
+exclude   = RequireTidyCode ProhibitMultiplePackages ProhibitPackageVars ProhibitMixedCaseSubs ProhibitBuiltinHomonyms RequireEndWithOne
+[Subroutines::ProhibitExcessComplexity]
+max_mccabe = 40
+[ControlStructures::ProhibitCascadingIfElse]
+max_elsif = 6

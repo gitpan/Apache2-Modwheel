@@ -26,7 +26,12 @@ MANIFEST			This list of files
 MANIFEST.skip
 META.yml
 README
+t/00-Kwalitee.t
+t/00-pod_coverage.t.disabled
+t/00-POD_valid.t
+t/00-YAML-META_valid.t
 t/01-Apache-ModWheel.t
 t/02-Apache-ModWheel-Authen.t
+t/99-perl_critic.t
+t/perlcriticrc
 ToDo
-SIGNATURE    Added here by Module::Build

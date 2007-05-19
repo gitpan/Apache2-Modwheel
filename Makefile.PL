@@ -41,7 +41,7 @@ use inc::Module::Install;
     
 # Define metadata
 name            'Apache2-Modwheel';
-version         '0.2.1';
+version         '0.2.3';
 all_from        'lib/Apache2/Modwheel.pm';
 author          'Ask Solem <ask@0x61736b.net>';
 license         'perl';
@@ -62,6 +62,8 @@ requires        'Apache2::Request'          => 2.00;
 requires        'Apache2::Upload'           => 2.00;
 
 build_requires  'Test::More'                => 0.42;
+recommends      'Test::YAML::Meta'          => 0.04;
+recommends      'Test::Kwalitee'            => 0.30;
     
 #no_index        'directory'         => 'demos';
 #install_script  'bin/myscript';

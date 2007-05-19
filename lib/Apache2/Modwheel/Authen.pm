@@ -12,7 +12,7 @@ use strict;
 use warnings;
 use 5.008;
 use mod_perl2 2.0;
-use version; our $VERSION = qv('0.2.1');
+use version; our $VERSION = qv('0.2.3');
 
 use Readonly;
 use Modwheel                ();
@@ -99,6 +99,10 @@ sub handler : method {
         $r->note_basic_auth_failure;
         $r->log_reason( $modwheel->error );
         $db->disconnect( );
+        $r->log_reason(
+            "Invalid login to site $site from $remote_addr " .
+            "using username: $uname"
+        );
         return Apache2::Const::HTTP_UNAUTHORIZED;
     }
 
